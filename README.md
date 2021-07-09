@@ -1,24 +1,11 @@
-# dictlet-app
+# Dictlet App
 
-## Project setup
-```
-npm install
-```
+Multi-language dictionary web app with simple design, built with Vue + TailwindCSS.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## TODO
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- [ ] English-Chinese dictionary and Turkish-English dictionary support coming soon...
+- [ ] Anki Desktop integration
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Disclaimer
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

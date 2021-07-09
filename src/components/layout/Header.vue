@@ -1,6 +1,7 @@
 <template>
   <div class="flex justify-between text-3xl">
     <div class="flex justify-start">
+      <button class="button pr-2" @click="toHome"><span>🌎</span></button>
       <button class="button pr-2"><span>🇪🇸</span></button>
       <button class="button"><span>🇺🇸</span></button>
       <!-- <button class="">🇹🇷</button> -->
@@ -14,7 +15,10 @@
 <script>
 export default {
   name: 'Header',
-  components: {
+  methods: {
+    toHome: function() {
+      this.$router.push('/')
+    }
   }
 }
 </script>

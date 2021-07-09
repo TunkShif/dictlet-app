@@ -1,7 +1,5 @@
 <template>
   <div>
-    <div class="py-40 text-4xl text-center" :class="isLoading ? 'visible' : 'hidden'">Loading...</div>
-
     <div class="flex justify-between px-2 py-8">
       <span class="text-4xl font-bold text-gray-800">{{ result.word }}</span>
       <span class="text-2xl text-gray-800 hover:text-gray-600">
@@ -28,7 +26,6 @@ export default {
   name: 'EsDict',
   data: function() {
     return {
-      isLoading: true,
       result: null
     }
   },
