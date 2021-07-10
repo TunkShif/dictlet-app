@@ -19,9 +19,14 @@ export default {
       query: ''
     }
   },
+  computed: {
+    lang: function() {
+      return this.$store.state.lang
+    }
+  },
   methods: {
     submit: function() {
-      this.$router.push(`/dict/${this.query}`)
+      this.$router.push(`/dict/${this.query}?lang=${this.lang}`)
     }
   }
 }

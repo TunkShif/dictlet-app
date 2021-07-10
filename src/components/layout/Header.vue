@@ -6,7 +6,7 @@
         v-for="lang in langs"
         :key="lang.name"
         :class="lang.isActive ? 'underline' : ''"
-        @click="changeLang(lang)">
+        @click="changeLanguage(lang)">
       {{lang.icon}}
       </button>
     </div>
@@ -21,7 +21,6 @@ export default {
   name: 'Header',
   data: function() {
     return {
-      currentActive: 'es',
       langs: {
         es: {
           name: 'es',
@@ -41,13 +40,18 @@ export default {
       }
     }
   },
+  computed: {
+    currentActive: function() {
+      return this.$store.state.lang
+    }
+  },
   methods: {
     toHome: function() {
       this.$router.push('/')
     },
-    changeLang: function(lang) {
+    changeLanguage: function(lang) {
       this.langs[this.currentActive].isActive = false
-      this.currentActive = lang.name
+      this.$store.commit('changeLanguage', lang.name)
       this.langs[lang.name].isActive = true
     }
   }
