@@ -1,27 +1,27 @@
 <template>
   <div>
-    <EsDefinition
+    <Definition
       :pos="item.pos"
       :sense="item.sense"
       />
-    <EsExample
+    <Example
       :examples="item.examples"
       />
   </div>
 </template>
 
 <script>
-import EsDefinition from '@/components/ui/esdict/Definition.vue'
-import EsExample from '@/components/ui/esdict/Example.vue'
+import Definition from '@/components/ui/dict/Definition.vue'
+import Example from '@/components/ui/dict/Example.vue'
 
 export default {
-  name: 'EsItem',
+  name: 'Item',
   props: {
     item: Object
   },
   components: {
-    EsDefinition,
-    EsExample
+    Definition,
+    Example
   }
 }
 </script>

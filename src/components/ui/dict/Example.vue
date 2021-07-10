@@ -1,6 +1,6 @@
 <template>
   <div class="text-lg px-2">
-    <div class="mb-2" v-for="example in examples" :key="example.example">
+    <div class="mb-2" v-for="(example, index) in examples" :key="index">
       <p class="sentence-es">{{ example.example }}</p>
       <p class="sentence-en text-gray-700">{{ example.exampleTranslation }}</p>
     </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'EsExample',
+  name: 'Example',
   props: {
     examples: Array
   }

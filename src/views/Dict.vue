@@ -12,9 +12,9 @@
         </span>
       </div>
 
-      <EsItem
-        v-for="definition in result.definitions"
-        :key="definition.sense"
+      <Item
+        v-for="(definition, index) in result.definitions"
+        :key="index"
         :item="definition"/>
     </div>
     <LoadingSkeleton v-else/>
@@ -22,23 +22,34 @@
 </template>
 
 <script>
-import EsItem from '@/components/ui/esdict/Item.vue'
+import Item from '@/components/ui/dict/Item.vue'
 import LoadingSkeleton from '@/components/ui/LoadingSkeleton.vue'
 
 export default {
-  name: 'EsDict',
+  name: 'Dict',
+  props: {
+    query: String
+  },
+  computed: {
+    lang: function() {
+      return this.$route.query.lang
+    }
+  },
   data: function() {
     return {
       result: null
     }
   },
   components: {
-    EsItem,
+    Item,
     LoadingSkeleton
   },
   mounted: function() {
-    let query = this.$route.params.query
-    fetch(`https://dictlet.herokuapp.com/spanishdict/query/${query}?isPosAbbr=false`)
+    const apis = {
+      es: `https://dictlet.herokuapp.com/spanishdict/query/${this.query}?isPosAbbr=false`,
+      en: `https://dictlet.herokuapp.com/youdao-collins/query/${this.query}`
+    }
+    fetch(apis[this.lang])
       .then(response => response.json())
       .then(data => this.result = data.result)
   },

@@ -7,7 +7,7 @@
 
 <script>
 export default {
- name: 'EsDefinition',
+ name: 'Definition',
  props: {
    pos: String,
    sense: String
