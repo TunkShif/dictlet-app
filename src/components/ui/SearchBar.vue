@@ -1,5 +1,5 @@
 <template>
-  <div class="relative lg:w-2/3 mx-auto">
+  <div class="relative lg:w-4/5 mx-auto">
     <input
       type="text" v-model="query"  @keyup.enter="submit"
       class="search-bar block mx-auto w-full text-2xl text-gray-600 border-0 border-b-2 border-gray-500 bg-transparent focus:ring-0 focus:border-gray-400">

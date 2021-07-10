@@ -15,7 +15,7 @@ const routes = [
     path: '/esdict/:query',
     name: 'EsDict',
     component: EsDict
-  }
+  },
   // {
   //   path: '/about',
   //   name: 'About',
