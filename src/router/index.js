@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import Dict from '@/views/Dict.vue'
+import Error from '@/views/Error.vue'
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,11 @@ const routes = [
     component: Dict,
     props: true
   },
+  {
+    path: '/error',
+    name: 'Error',
+    component: Error
+  }
 ]
 
 const router = new VueRouter({

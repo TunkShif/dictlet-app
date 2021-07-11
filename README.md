@@ -7,6 +7,7 @@ Multi-language dictionary web app with simple design, built with Vue + TailwindC
 ## TODO
 
 - [x] English-Chinese dictionary and Turkish-English dictionary support coming soon...
+- [x] 404 NOT FOUND page
 - [ ] Anki Desktop integration
 - [ ] More desktop-friendly ui design
 

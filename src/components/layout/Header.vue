@@ -32,11 +32,11 @@ export default {
           icon: '🇺🇸',
           isActive: false
         },
-        /* tr: { */
-        /*   name: 'tr', */
-        /*   icon: '🇹🇷', */
-        /*   isActive: false */
-        /* } */
+        tr: {
+          name: 'tr',
+          icon: '🇹🇷',
+          isActive: false
+        }
       }
     }
   },

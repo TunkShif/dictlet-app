@@ -47,11 +47,19 @@ export default {
   mounted: function() {
     const apis = {
       es: `https://dictlet.herokuapp.com/spanishdict/query/${this.query}?isPosAbbr=false`,
-      en: `https://dictlet.herokuapp.com/youdao-collins/query/${this.query}`
+      en: `https://dictlet.herokuapp.com/youdao-collins/query/${this.query}`,
+      tr: `https://dictlet.herokuapp.com/seslisozluk/query/${this.query}`
     }
     fetch(apis[this.lang])
       .then(response => response.json())
-      .then(data => this.result = data.result)
+      .then(data => {
+        if (data.success) {
+          this.result = data.result
+        } else {
+          this.$router.push('/error')
+        }
+      })
+      .catch(() => this.router.push('/error'))
   },
   methods: {
     playAudio: function() {
