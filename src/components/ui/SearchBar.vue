@@ -26,7 +26,9 @@ export default {
   },
   methods: {
     submit: function() {
-      this.$router.push(`/dict/${this.query}?lang=${this.lang}`)
+      if (this.query.trim().length != 0) {
+        this.$router.push(`/dict/${this.query}?lang=${this.lang}`)
+      }
     }
   }
 }
