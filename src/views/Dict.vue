@@ -1,8 +1,11 @@
 <template>
   <div>
     <div v-if="result">
-      <div class="flex justify-between px-2 py-8">
-        <span class="text-4xl font-bold text-gray-800">{{ result.word }}</span>
+      <div class="flex justify-between items-center px-2 py-8">
+        <div class="flex">
+          <span class="text-4xl font-bold text-gray-800 pr-4">{{ result.word }}</span>
+          <span v-if="result.phonetics" class="text-2xl font-bold text-gray-600 self-end">{{ result.phonetics }}</span>
+        </div>
         <span class="text-2xl text-gray-800 hover:text-gray-600">
           <button @click="playAudio">
             <i class="fas fa-play mt-2">
