@@ -1,0 +1,11 @@
+.button {
+  @apply pr-2;
+}
+
+.button:hover {
+  @apply underline text-gray-500 outline-none;
+}
+
+.button:focus {
+  @apply underline text-gray-800 outline-none;
+}
